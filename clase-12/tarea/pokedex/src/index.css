@@ -1,0 +1,31 @@
+html {
+  overflow: scroll;
+  overflow-y: hidden;
+}
+::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+#listado {
+  height: 50vh;
+}
+
+#nav {
+  height: 5vh;
+  margin-top: 2rem;
+}
+
+#card {
+  height: 100%;
+   justify-content: center;
+   border: none;
+}
+
+.hidden {
+  display: none;
+}

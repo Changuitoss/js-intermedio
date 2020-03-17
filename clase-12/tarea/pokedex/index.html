@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="./src/index.css">
+  <title>Pokedex</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-4">
+        <h1 class="display-2">Pokedex</h1>
+        <div id="listado" class="list-group overflow-auto"></div>
+        <div id="nav" class="d-flex btn-group">
+          <button id="previous" href="#" class="flex-fill btn btn-success">Anteriores</button>
+          <button id="next" href="#" class="flex-fill btn btn-success">Siguientes</button>
+        </div>
+      </div>
+      <div class="col-8 hidden" id="info">
+        <div id="card" class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div id="imagenes" class="col-md-4">
+              <img id="image" class="card-img" alt="imagen del pokemon">
+              <img id="image1" class="card-img" alt="imagen del pokemon">
+            </div>
+            <div class="col-md-8">
+              <div class="d-flex align-items-center">
+                <div class="card-body">
+                  <h1 id="name" class="card-title">Nombre</h5>
+                  <p id="height" class="card-text">Heigth</p>
+                  <p id="weight" class="card-text">Weight</p>
+                  <p>Habilidades <span id="habilidades" class="badge badge-primary badge-pill"></span></p>
+                  <ul id="abilityList" class="list-group list-group-flush">
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./src/index.js"></script>
+</body>
+</html>

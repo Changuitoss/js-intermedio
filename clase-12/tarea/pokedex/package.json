@@ -1,0 +1,29 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Changuitoss/pokedex.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Changuitoss/pokedex/issues"
+  },
+  "homepage": "https://github.com/Changuitoss/pokedex#readme",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "node": "^13.8.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.3.32",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1"
+  }
+}
