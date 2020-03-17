@@ -1,8 +1,7 @@
 /* eslint-disable linebreak-style */
 let urlInicial = 'https://pokeapi.co/api/v2/pokemon/';
 const info = document.querySelector('#info');
-let numPokemon = 1;
-let limit = 20;
+const limit = 20;
 let offset = 0;
 
 function obtenerPokemones() {
@@ -17,7 +16,6 @@ function mostrarListadoPokemones(pokemones) {
   pokemones.forEach((pokemon) => {
     const { name, url } = pokemon;
     const item = document.createElement('a');
-    const id = url.slice(35).replace('/', '');
 
     item.textContent = name[0].toUpperCase() + name.slice(1, name.length);
     item.href = '#';
@@ -29,16 +27,15 @@ function mostrarListadoPokemones(pokemones) {
         itemActivo.classList.remove('active');
       }
       item.classList.add('active');
-      numPokemon = id;
 
       fetch(url)
         .then((r) => r.json())
         .then((pokemon) => {
-          mostrarPokemon(pokemon)});      
+          mostrarPokemon(pokemon);
+        });
     });
 
     lista.appendChild(item);
-
   });
 
   return lista;
@@ -57,10 +54,9 @@ function mostrarHabilidades(pokemon) {
       .then((info) => info.json())
       .then((infoJSON) => {
         const flavors = infoJSON.flavor_text_entries;
-        
 
         // Aca hago un for loop porque el forEach me encontraba muchos resultados "es" y no lo podia parar.
-        for (let i = 0; i < flavors.length; i++) {
+        for (let i = 0; i < flavors.length; i += 1) {
           if (flavors[i].language.name === 'es') {
             const descripcion = flavors[i].flavor_text;
 
@@ -113,12 +109,12 @@ function clickNav(e) {
   const listado = document.querySelector('#listado');
 
   if (e.target.id === 'next') {
-    offset += 20
+    offset += 20;
     urlInicial = `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`;
     listado.innerHTML = '';
     inicializar();
   } else if (e.target.id === 'previous' && offset != 0) {
-    offset -= 20
+    offset -= 20;
     urlInicial = `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`;
     listado.innerHTML = '';
     inicializar();
@@ -139,7 +135,7 @@ function inicializar() {
   obtenerPokemones()
     .then((pokemones) => {
       $listado.appendChild(mostrarListadoPokemones(pokemones));
-    })
+    });
 
   configurarNav();
 }
